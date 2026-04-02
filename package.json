@@ -1,0 +1,16 @@
+{
+  "name": "fitconnect",
+  "version": "1.0.0",
+  "description": "FitConnect - Fitness Social Media Platform (MERN Stack)",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "dev": "npm run dev:server & npm run dev:client",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "seed": "npm run seed --prefix server",
+    "build": "npm run build --prefix client"
+  },
+  "keywords": ["fitness", "mern", "social-media", "workout-tracker"],
+  "author": "FitConnect Team",
+  "license": "MIT"
+}

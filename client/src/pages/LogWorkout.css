@@ -1,0 +1,150 @@
+.log-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 24px;
+}
+.log-header-actions { display: flex; align-items: center; gap: 12px; }
+
+.workout-timer {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 10px 16px;
+  cursor: pointer; transition: border-color 0.2s;
+  flex-direction: column; align-items: center; gap: 2px;
+}
+.workout-timer:hover { border-color: var(--accent); }
+.workout-timer svg { color: var(--text-muted); }
+.timer-running { color: var(--accent); font-weight: 700; }
+.workout-timer span:first-of-type {
+  font-family: var(--font-display); font-size: 22px; letter-spacing: 0.06em; line-height: 1;
+}
+
+.volume-badge {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--accent-dim); border: 1px solid var(--border-accent);
+  border-radius: var(--radius-md); padding: 8px 16px;
+  color: var(--accent); font-weight: 700; font-size: 15px;
+}
+
+.log-meta { display: flex; gap: 14px; align-items: flex-end; }
+
+.exercise-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px; }
+
+.exercise-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.2s;
+  animation: fadeIn 0.3s ease;
+}
+.exercise-card:hover { border-color: rgba(255,255,255,0.12); }
+
+.exercise-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px;
+}
+.ex-header-left { display: flex; align-items: center; gap: 14px; }
+.ex-number {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--accent); color: white;
+  font-family: var(--font-display); font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.ex-name { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.ex-muscles { display: flex; gap: 4px; flex-wrap: wrap; }
+
+/* Sets table */
+.sets-table { padding: 0 20px; }
+.sets-header {
+  display: grid; grid-template-columns: 36px 1fr 1fr 60px 36px 28px;
+  gap: 8px; padding: 6px 0;
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--text-muted); font-weight: 700; border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+.set-row {
+  display: grid; grid-template-columns: 36px 1fr 1fr 60px 36px 28px;
+  gap: 8px; align-items: center; padding: 6px 0;
+  transition: background 0.15s; border-radius: 6px;
+}
+.set-row.completed { opacity: 0.6; }
+.set-num {
+  width: 28px; height: 28px;
+  background: var(--bg-elevated); border-radius: 6px;
+  font-size: 12px; font-weight: 700; color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+}
+.set-input {
+  padding: 8px 10px; font-size: 15px; font-weight: 600;
+  text-align: center; border-radius: 6px;
+}
+.set-vol { font-size: 12px; color: var(--text-muted); text-align: center; }
+.set-check {
+  width: 30px; height: 30px; border-radius: 6px;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); cursor: pointer; transition: all 0.15s;
+}
+.set-check.done { background: var(--green); border-color: var(--green); color: white; }
+.set-delete {
+  width: 24px; height: 24px; border-radius: 4px;
+  background: transparent; color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.15s;
+}
+.set-delete:hover { color: #EF4444; background: rgba(239,68,68,0.1); }
+.set-delete:disabled { opacity: 0.2; cursor: not-allowed; }
+
+.add-set-btn {
+  display: flex; align-items: center; gap: 6px;
+  margin: 10px 20px 16px;
+  color: var(--text-muted); font-size: 13px; font-weight: 600;
+  background: none; border: 1px dashed var(--border);
+  border-radius: 6px; padding: 7px 14px;
+  transition: all 0.15s; width: fit-content;
+}
+.add-set-btn:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
+
+.add-exercise-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 16px;
+  background: var(--bg-card); border: 2px dashed var(--border);
+  border-radius: var(--radius-lg); color: var(--text-muted);
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  transition: all 0.2s;
+}
+.add-exercise-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+.log-save-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 16px 24px;
+  margin-top: 16px; position: sticky; bottom: 16px;
+  backdrop-filter: blur(10px);
+}
+.log-summary { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 14px; }
+.log-summary strong { color: var(--text-primary); }
+
+/* Exercise picker */
+.ex-picker-list { display: flex; flex-direction: column; gap: 4px; max-height: 400px; overflow-y: auto; }
+.ex-picker-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px; border-radius: var(--radius-sm);
+  background: transparent; border: 1px solid transparent;
+  text-align: left; transition: all 0.15s; cursor: pointer; width: 100%;
+}
+.ex-picker-item:hover { background: var(--bg-elevated); border-color: var(--border-accent); }
+.ex-picker-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--accent-dim); display: flex; align-items: center; justify-content: center;
+  color: var(--accent); flex-shrink: 0;
+}
+.ex-picker-name { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+.ex-picker-muscles { font-size: 12px; color: var(--text-secondary); }
+
+/* PR Celebration */
+.pr-modal { padding: 0 !important; }
+.pr-celebration { padding: 48px 40px; }
+.pr-trophy { font-size: 80px; display: block; margin-bottom: 16px; animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1); }
+.pr-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }

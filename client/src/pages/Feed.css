@@ -1,0 +1,100 @@
+.feed-tabs {
+  display: flex; gap: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  margin-bottom: 20px;
+}
+.feed-tab {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 10px; border-radius: 8px;
+  font-size: 14px; font-weight: 600;
+  color: var(--text-muted); background: transparent;
+  transition: all 0.15s;
+}
+.feed-tab:hover { color: var(--text-primary); background: var(--bg-elevated); }
+.feed-tab.active { background: var(--bg-elevated); color: var(--text-primary); }
+
+.feed-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 22px;
+  margin-bottom: 14px;
+  transition: border-color 0.2s;
+}
+.feed-card:hover { border-color: rgba(255,255,255,0.11); }
+
+.feed-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 14px;
+}
+.feed-user {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+.feed-user:hover .feed-user-name { color: var(--accent); }
+.feed-user-name { display: block; font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+.feed-user-handle { display: block; font-size: 12px; color: var(--text-muted); }
+.feed-time { font-size: 12px; color: var(--text-muted); }
+
+.feed-workout-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.feed-stats { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.feed-stat {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 12px; color: var(--text-muted);
+  background: var(--bg-elevated); border-radius: 6px; padding: 4px 10px;
+}
+.feed-stat.pr { background: rgba(245,158,11,0.15); color: var(--gold); }
+
+.feed-exercises { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.feed-exercise-pill {
+  background: var(--bg-elevated); border-radius: 6px; padding: 5px 10px;
+  display: flex; gap: 6px; align-items: center;
+}
+.feed-ex-name { font-size: 12px; font-weight: 600; color: var(--text-primary); }
+.feed-ex-weight { font-size: 11px; color: var(--text-muted); }
+.feed-exercise-pill.more { color: var(--text-muted); font-size: 12px; }
+
+.feed-notes {
+  font-size: 13px; color: var(--text-secondary);
+  font-style: italic; margin-bottom: 14px;
+  padding: 10px 14px;
+  background: var(--bg-elevated); border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+.feed-actions { display: flex; gap: 8px; border-top: 1px solid var(--border); padding-top: 14px; }
+.feed-action-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: 8px;
+  font-size: 13px; font-weight: 600; color: var(--text-muted);
+  background: transparent; border: 1px solid transparent;
+  transition: all 0.15s;
+}
+.feed-action-btn:hover { background: var(--bg-elevated); color: var(--text-primary); border-color: var(--border); }
+.feed-action-btn.liked { color: #EF4444; }
+.feed-action-btn.liked svg { fill: #EF4444; }
+
+.feed-comments { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.feed-comment {
+  display: flex; gap: 8px; font-size: 13px;
+  background: var(--bg-elevated); border-radius: 8px; padding: 8px 12px;
+}
+.feed-comment-user { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.feed-comment-text { color: var(--text-secondary); }
+.feed-comment-form { display: flex; gap: 8px; }
+
+.feed-empty {
+  text-align: center; padding: 80px 20px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.feed-empty h3 { font-family: var(--font-display); font-size: 28px; color: var(--text-primary); }
+.feed-empty p { color: var(--text-muted); font-size: 14px; max-width: 300px; }

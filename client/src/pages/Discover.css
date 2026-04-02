@@ -1,0 +1,38 @@
+.discover-search { margin-bottom: 28px; }
+
+.discover-results { display: flex; flex-direction: column; gap: 10px; }
+
+.discover-card {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px 24px;
+  transition: border-color 0.2s;
+}
+.discover-card:hover { border-color: rgba(255,255,255,0.12); }
+
+.discover-card-main {
+  display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0;
+  text-decoration: none;
+}
+.discover-name { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+.discover-handle { font-size: 13px; color: var(--text-muted); }
+.discover-meta { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--text-muted); }
+
+.discover-empty {
+  text-align: center; padding: 60px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  color: var(--text-muted);
+}
+
+.discover-prompt {
+  text-align: center; padding: 100px 20px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.discover-prompt-icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--accent-dim); color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 8px;
+}
+.discover-prompt h3 { font-family: var(--font-display); font-size: 32px; color: var(--text-primary); }
+.discover-prompt p { color: var(--text-muted); font-size: 15px; max-width: 360px; line-height: 1.6; }
