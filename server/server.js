@@ -54,6 +54,11 @@ mongoose
     console.log('✅ MongoDB connected');
     await autoSeed();
     const PORT = process.env.PORT || 5000;
+    // Keep-alive ping (free tier)
+const https = require('https');
+setInterval(() => {
+  https.get(process.env.RENDER_EXTERNAL_URL + '/api/health', () => {});
+}, 14 * 60 * 1000); // ping every 14 minutes
     app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
   })
   .catch((err) => console.error('❌ MongoDB connection error:', err));
