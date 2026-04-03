@@ -47,6 +47,13 @@ async function autoSeed() {
   }
 }
 
+// Prevent Render free tier from sleeping
+const https = require('https');
+setInterval(() => {
+  https.get('https://fitconnect-g4t5.onrender.com/api/health', (res) => {
+    console.log('Keep-alive ping:', res.statusCode);
+  }).on('error', () => {});
+}, 14 * 60 * 1000); // every 14 minutes
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI || 'mongodb://localhost:27017/fitconnect')
